@@ -1,0 +1,262 @@
+
+<html>
+  <head>
+    <title>Parsa Massah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  
+  
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(148, 148, 159);
+  }
+  P.Copyright-text{
+      text-align: center;
+  }
+  .topnav {
+    overflow: hidden;
+    background-color: rgb(68, 68, 68);
+    margin-bottom: 20px;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px 18px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .topnav a:hover {
+    background-color: #abdcf8;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #079ff7;
+    color: white;
+  }
+  
+  #Copyright a {
+    color: #7A7762;
+    text-decoration:none;
+  }
+    .image-left
+    {
+      text-align: center;
+      margin: 0.7em 0em 0em 0.2em;
+    }
+    .image-left img {max-width:240px;}
+    
+    .byline
+    {
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 1em;
+      color: #6F6F6F;
+    }
+    #footer {
+      text-align: center;
+    }
+    #footer a {
+          
+          color: #7A7762;
+          text-decoration:none;
+      }
+          .image-left
+          {
+              text-align: center;
+              margin: 0.7em 0em 0em 0.2em;
+          }
+          .image-left img {max-width:240px;}
+          
+          .byline
+          {
+              letter-spacing: 0.05em;
+              text-transform: uppercase;
+              font-weight: 400;
+              font-size: 1em;
+              color: #6F6F6F;
+          }
+          #footer a img{
+          width:25px;
+          height:25px;
+          margin:0 4px -8px 5px;
+          }
+      
+    #viewParent{
+      display: flex;
+      width: 100%;
+      
+    }
+    #leftview{
+      flex: 1;
+      width: 30%;
+      padding-left: 40px;
+      font-size: 1.3vw;
+      line-height: 80%;
+  
+    }
+    #leftview img{
+      width: 70%;
+      
+    }
+  
+  
+    #rightview {
+      width: 65%;
+      border-radius: 15px;
+    }
+    #spacer {
+      width: 5%;
+      padding-left: 10px;
+    }
+  
+
+input[type=text],textarea {
+
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 4px;
+ 
+  margin-top: 6px;
+  /* padding: 15px; */
+  margin-bottom: 16px;
+  resize: vertical;
+  box-sizing: border-box;
+  /* box-sizing:content-box; */
+  width: 100%;
+  padding: 12px;
+}
+
+input[type=button] {
+  background-color: #079fc5;
+  color: white;
+cursor:pointer;
+  padding: 12px 20px;
+  
+  border-radius: 7px;
+border: none;
+}
+
+input[type=submit]:hover {
+  background-color: #047a97;
+}
+
+.container {
+
+  padding: 25px;
+  background-color: #acc1cc;
+   border-radius: 10px;
+}
+
+#mainfooter{
+  width : 100%;
+  background-color: rgb(72, 72, 78);
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  margin-top: 10px;
+}
+
+#mainfooter img{
+  width: 25px;
+  height: 25px;
+}
+  </style>
+  </head>
+  <body>
+  <div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="skills.html">Skills</a>
+    <a href="achievements.html">Achievements</a>
+    <a class="active" href="contact.html">Contact</a>
+  </div>
+  
+  <div id="viewParent" style="margin-right: 10px;">
+    <div id="leftview" >
+      <h1 id="name">Parsa Massah</h1>
+      <h4>Department of Computer Enginearing</h4>
+      <h4>Sharif University Of Thechnology</h4>
+      <img id="face-image" src="imgs/massah.jpg" alt="massah">
+      
+    </div>
+  
+    <div id="rightview">
+      <div style="padding-left: 7%; padding-right: 7%; padding-top: 5%;">
+        <div class="container">
+          <form name="myform">
+            <label >Name:</label>
+            <input name="name" type="text" placeholder="Enter your name...">
+        
+            <label id="email">Email:</label>
+            <input name="email" type="text"  placeholder="Enter your Email... ">
+
+            <label>Message:</label>
+
+            <textarea name="text" placeholder="Message..." style="height:170px"></textarea>
+            <p id="con"></p>
+            <input  id = "submit" type="button" value="Send" onclick="return submitHit()">
+            <input  id = "send" type="button" value="Submit" style=" background-color: rgb(0, 190, 25); display: none;"onclick="sendHit()">
+            <input  id = "cancel" type="button" value="Cancel" style=" background-color:rgb(177, 15, 48); display: none;"onclick="cancelHit()">
+          </form>
+        </div>
+          </div>  
+    </div>
+
+        <div id="spacer">
+        <pre>  </pre>
+      </div>
+  </div>
+  <script>
+function submitHit() {
+  let name = document.forms["myform"]["name"].value;
+  let email = document.forms["myform"]["email"].value;
+  let message = document.forms["myform"]["text"].value;
+  if(name === ""){document.getElementById("con").innerText = "Please enter your name";}
+  else if(email === ""){document.getElementById("con").innerText = "Please enter your email"}
+  else if(message === ""){document.getElementById("con").innerText = "Please enter your message"}
+  else{
+    document.getElementById("submit").style.display = "none";
+    document.getElementById("send").style.display = "inline";
+    document.getElementById("cancel").style.display = "inline";
+    document.getElementById("con").innerText = "Sure to send?";}
+
+
+}
+
+function sendHit(){
+    document.getElementById("submit").style.display = "none";
+    document.getElementById("send").style.display = "none";
+    document.getElementById("cancel").style.display = "none";
+    document.getElementById("con").innerText = "Message sent successfully!";
+
+}
+
+function cancelHit(){
+    document.getElementById("submit").style.display = "inline";
+    document.getElementById("send").style.display = "none";
+    document.getElementById("cancel").style.display = "none";
+    document.getElementById("con").innerText = "";
+
+}
+  </script>
+  
+  <div id="mainfooter">
+    <p style="text-align: center;"><a href="tel:00989123456789"><img src="imgs/call.png"></a>
+                                      <a href="mailto:mpmb81@gmail.com"><img src="imgs/email.png"></a>
+                                      <a href="https://github.com/mparsam"><img src="imgs/git.png"></a>
+                                      <a href="https://stackoverflow.com/users/17460874/parsam"><img src="imgs/stack.png"></a>
+                                      <a href="https://t.me/durov"><img src="imgs/tel.png"></a>
+    </p>
+    <div id="footer">
+      <p class="footer-text" style="color: black; align-content: center;">
+          <a href="http://sharif.ir"><img src="imgs/sharif_logo.png" alt="Sharif University of Technology" /></a>Copyright © 2021 All rights reserved |  <a href="http://ce.sharif.ir/">Department of Computer Enginearing </a> | <a href="http://sharif.ir">Sharif University of Technology</a> <a href="http://sharif.ir"><img src="imgs/sharif_logo.png" alt="Sharif University of Technology" /></a>
+      </p>
+    </div>
+  </div>
+  </body>
+  </html>
+  
